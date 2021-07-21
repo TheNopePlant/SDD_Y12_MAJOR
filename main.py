@@ -11,7 +11,7 @@ display_screen_window = pygame.display.set_mode((scr_width, scr_height))
 play_ground = scr_height * 0.8
 game_image = {}
 game_audio_sound = {}
-player = player
+player = 'images/player.png'
 bcg_image = 'images/background.png'
 pipe_image = 'images/pipe.png'
 
@@ -95,7 +95,7 @@ def main_gameplay():
             pip_middle_positions = pipe['x'] + game_image['pipe'][0].get_width() / 2
             if pip_middle_positions <= p_middle_positions < pip_middle_positions + 4:
                 score += 1
-                #Print score as terminal output
+                #Print score to as terminal output
                 #print(f"Your score is {score}")
                 game_audio_sound['point'].play()
 
@@ -195,12 +195,6 @@ if __name__ == "__main__":
         pygame.image.load('images/8.png').convert_alpha(),
         pygame.image.load('images/9.png').convert_alpha(),
     )
-    game_image['player'] = (
-        pygame.image.load('images/bird_blue.png').convert_alpha(),
-        pygame.image.load('images/bird_yellow.png').convert_alpha(),
-        pygame.image.load('images/bird_red.png').convert_alpha(),
-    )
-
 
     game_image['base'] = pygame.image.load('images/base.png').convert_alpha()
     game_image['pipe'] = (pygame.transform.rotate(pygame.image.load(pipe_image).convert_alpha(), 180),
